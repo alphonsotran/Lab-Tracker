@@ -1,0 +1,22 @@
+<h1> Current Proposals </h1>
+<table class="active-proposals">
+  <tr>
+    <th></th>
+    <th>Proposals</th>
+    <th>Status</th>
+  </tr>
+  <%= render @proposals - archived_proposals(@proposals) %>
+</table><br>
+<% if logged_in? %>
+<div class="new-proposal"><%= link_to "Add New Proposal", new_proposal_path %></div>
+<% end %>
+
+<h1> Archived Proposals</h1>
+<table class="archived-proposals">
+  <tr>
+    <th></th>
+    <th>Proposals</th>
+    <th>Status</th>
+  </tr>
+  <%= render archived_proposals(@proposals) %>
+</table>

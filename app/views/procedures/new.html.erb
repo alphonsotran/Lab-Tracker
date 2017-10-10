@@ -1,0 +1,20 @@
+
+<h1>Add procedure</h1>
+
+<% if @procedure && @procedure.errors.any? %>
+  <ul>
+  <% @procedure.errors.full_messages.each do |error_message| %>
+    <li><%= error_message %></li>
+  <% end %>
+  </ul>
+<% end %>
+
+
+<%= form_for [:experiment, @procedure] do |f| %>
+  <%= f.label :steps %>
+  <%= f.text_area :steps %>
+  <br>
+
+  <%= f.submit "Submit" %>
+
+<% end %>

@@ -1,0 +1,6 @@
+<br>
+<h1> Welcome <%= @user.first_name %>! </h1>
+
+<h4> Your Proposals: </h4>
+
+  <%= render partial: 'users/user-proposals', locals: { proposals: @user.proposals, user: @user } %>
